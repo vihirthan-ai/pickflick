@@ -1,0 +1,10 @@
+[
+  {"name":"Netflix","logo":"/images/netflix.png"},
+  {"name":"Disney+","logo":"/images/disney+.png"},
+  {"name":"Max","logo":"/images/max.png"},
+  {"name":"Hulu","logo":"/images/hulu.png"},
+  {"name":"Prime Video","logo":"/images/primevideo.png"},
+  {"name":"Apple TV+","logo":"/images/appletv.png"},
+  {"name":"Peacock","logo":"/images/peacock.png"},
+  {"name":"Paramount+","logo":"/images/paramount+.png"}
+]

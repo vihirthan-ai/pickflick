@@ -1,0 +1,35 @@
+[
+  {
+    "id": "m1",
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": "Sci-Fi/Drama",
+    "description": "A team travels through a wormhole to ensure humanity's survival.",
+    "duration": 169,
+    "platforms": ["Netflix","Paramount+"],
+    "rating": "8.7",
+    "mood": ["mind-bending","thrills","feels"]
+  },
+  {
+    "id": "m2",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "genre": "Comedy/Drama",
+    "description": "A concierge and his protégé navigate a changing Europe.",
+    "duration": 99,
+    "platforms": ["Disney+", "Netflix"],
+    "rating": "8.1",
+    "mood": ["laughs","chill"]
+  },
+  {
+    "id": "m3",
+    "title": "Spirited Away",
+    "year": 2001,
+    "genre": "Animation/Fantasy",
+    "description": "A girl enters a world of spirits and must find her way home.",
+    "duration": 125,
+    "platforms": ["Max","Netflix"],
+    "rating": "8.6",
+    "mood": ["chill","mind-bending"]
+  }
+]
