@@ -1,35 +1,11 @@
 [
-  {
-    "id": "m1",
-    "title": "Interstellar",
-    "year": 2014,
-    "genre": "Sci-Fi/Drama",
-    "description": "A team travels through a wormhole to ensure humanity's survival.",
-    "duration": 169,
-    "platforms": ["Netflix","Paramount+"],
-    "rating": "8.7",
-    "mood": ["mind-bending","thrills","feels"]
-  },
-  {
-    "id": "m2",
-    "title": "The Grand Budapest Hotel",
-    "year": 2014,
-    "genre": "Comedy/Drama",
-    "description": "A concierge and his protégé navigate a changing Europe.",
-    "duration": 99,
-    "platforms": ["Disney+", "Netflix"],
-    "rating": "8.1",
-    "mood": ["laughs","chill"]
-  },
-  {
-    "id": "m3",
-    "title": "Spirited Away",
-    "year": 2001,
-    "genre": "Animation/Fantasy",
-    "description": "A girl enters a world of spirits and must find her way home.",
-    "duration": 125,
-    "platforms": ["Max","Netflix"],
-    "rating": "8.6",
-    "mood": ["chill","mind-bending"]
-  }
+  {"id":"m1","title":"Interstellar","year":2014,"genre":"Sci-Fi/Drama","description":"A team travels through a wormhole to ensure humanity's survival.","duration":169,"platforms":["Netflix","Paramount+"],"rating":"8.7","mood":["mind-bending","thrills","feels"]},
+  {"id":"m2","title":"The Grand Budapest Hotel","year":2014,"genre":"Comedy/Drama","description":"A concierge and his protégé navigate a changing Europe.","duration":99,"platforms":["Disney+", "Netflix"],"rating":"8.1","mood":["laughs","chill"]},
+  {"id":"m3","title":"Spirited Away","year":2001,"genre":"Animation/Fantasy","description":"A girl enters a world of spirits and must find her way home.","duration":125,"platforms":["Max","Netflix"],"rating":"8.6","mood":["chill","mind-bending"]},
+  {"id":"m4","title":"Parasite","year":2019,"genre":"Thriller/Drama","description":"Greed and class discrimination threaten a symbiotic relationship.","duration":132,"platforms":["Hulu"],"rating":"8.5","mood":["thrills","mind-bending"]},
+  {"id":"m5","title":"Knives Out","year":2019,"genre":"Mystery/Comedy","description":"A detective investigates the death of a patriarch of an eccentric family.","duration":130,"platforms":["Prime Video"],"rating":"7.9","mood":["thrills","laughs"]},
+  {"id":"m6","title":"Everything Everywhere All at Once","year":2022,"genre":"Sci-Fi/Comedy","description":"A Chinese-American woman is swept up in a mind-bending adventure across multiple universes.","duration":139,"platforms":["Prime Video"],"rating":"7.8","mood":["mind-bending","laughs"]},
+  {"id":"m7","title":"The Bear","year":2022,"genre":"Drama","description":"A young chef returns to Chicago to run his family's sandwich shop.","duration":30,"platforms":["Hulu"],"rating":"8.6","mood":["feels","thrills"]},
+  {"id":"m8","title":"Succession","year":2018,"genre":"Drama","description":"The Roy family controls a global media empire.","duration":60,"platforms":["Max"],"rating":"8.8","mood":["thrills","mind-bending"]},
+  {"id":"m9","title":"The White Lotus","year":2021,"genre":"Comedy/Drama","description":"Follow the exploits of guests and employees at a tropical resort.","duration":60,"platforms":["Max"],"rating":"7.6","mood":["thrills","laughs"]}
 ]

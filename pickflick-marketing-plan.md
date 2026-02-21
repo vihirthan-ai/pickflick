@@ -1,17 +1,21 @@
-# Phase 1 Marketing Plan (data-driven MVP)
+# Phase 2 Marketing Plan (gh-pages deploy)
 
-- Deliver a data-driven 4-step PickFlick MVP on GH Pages with a dynamic data layer (movies.json, platforms.json)
-- Provide Phase 2 blueprint in this doc
+This plan expands the core release with deployment automation and marketing assets.
 
-## Deliverables (Phase 1)
-- Static site with mood/subs/time/who flow
-- Data endpoints (movies.json, platforms.json)
-- Blog and FAQ with JSON-LD
-- Sitemap.xml, robots.txt, manifest.json
-- Phase 1 recap and Phase 2 kickoff plan
+## 1) Phase 2 Goals
+- Automate deployment to gh-pages on main pushes
+- Expand data payloads (movies.json, platforms.json)
+- Create Phase 2 launch assets (30-day calendar, outreach templates)
 
-## Phase 2 (high-level)
-- Add automated deployment scripts (GH Actions) and a GitHub workflow to auto-build and deploy on push
-- Expand dataset (movies.json) and add more moods
-- Add an API layer behind a public endpoint (optional) for dynamic fetch
-- Improve accessibility and add tests
+## 2) Phase 2 Deliverables
+- .github/workflows/gh-pages-deploy.yml
+- public/movies.json (expanded)
+- public/platforms.json (updated)
+- public/pickflick-marketing-plan.md (Phase 2 updates)
+- STATUS_PHASE2.md (live log)
+
+## 3) Phase 2 Timeline (high-level)
+- Day 0-0.5h: implement GH Pages workflow
+- Day 0.5-1h: expand datasets
+- Day 1-2h: create marketing assets and run tests
+
