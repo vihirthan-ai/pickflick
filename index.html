@@ -1,41 +1,245 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #000000; min-height: 15.0px}
-    span.s1 {color: #1f6bc0}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'none'; frame-ancestors 'none'; base-uri 'self'">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Stop scrolling streaming services. Pick something to watch in 4 taps. PickFlick matches your mood, subscriptions, time, and vibe to the perfect pick.">
+<meta name="keywords" content="what to watch tonight, movie recommendation, streaming decision fatigue, pick a movie, PickFlick, Netflix recommendation, cant decide what to watch">
+<meta property="og:title" content="PickFlick — Kill the Scroll">
+<meta property="og:description" content="Stop scrolling. Start watching. 4 taps to your perfect pick.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pickflick.app/">
+<meta property="og:image" content="https://pickflick.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PickFlick — Kill the Scroll">
+<meta name="twitter:description" content="Stop scrolling. Start watching. 4 taps to your perfect pick.">
+<link rel="canonical" href="https://pickflick.app/">
+<link rel="manifest" href="/manifest.json">
+<title>PickFlick — Kill the Scroll</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d0d0d;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.container{max-width:420px;width:90%;text-align:center}
+h1{font-size:2.4rem;margin-bottom:.3rem;background:linear-gradient(135deg,#ff6b6b,#feca57);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tagline{color:#aaa;margin-bottom:2rem;font-size:.95rem}
+.step{display:none;animation:fadeIn .3s ease}
+.step.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.options{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:1.5rem 0}
+.opt{background:#1a1a2e;border:2px solid #333;border-radius:12px;padding:14px 20px;cursor:pointer;font-size:1rem;color:#fff;transition:all .2s}
+.opt:hover{border-color:#ff6b6b;background:#16213e}
+.opt.selected{border-color:#feca57;background:#1a1a3e}
+.result-card{background:linear-gradient(145deg,#1a1a2e,#16213e);border-radius:16px;padding:24px;margin-top:1.5rem;text-align:left;border:1px solid #333}
+.result-card h2{font-size:1.4rem;margin-bottom:6px;color:#feca57}
+.result-card .genre{color:#aaa;font-size:.85rem;margin-bottom:8px}
+.result-card .desc{color:#ccc;font-size:.9rem;line-height:1.4;margin-bottom:12px}
+.result-card .meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.badge{background:#333;padding:4px 10px;border-radius:20px;font-size:.8rem;color:#feca57}
+.btn{background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-size:1rem;cursor:pointer;margin:8px 4px;transition:transform .15s}
+.btn:hover{transform:scale(1.05)}
+.btn.secondary{background:#333}
+.progress-dots{display:flex;gap:8px;justify-content:center;margin-bottom:1.5rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#333}
+.dot.active{background:#ff6b6b}
+.dot.done{background:#feca57}
+.platform-link{display:inline-block;background:#feca57;color:#0d0d0d;padding:8px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;margin-top:8px}
+.platform-link:hover{opacity:.9}
+footer{margin-top:2rem;color:#555;font-size:.75rem}
+</style>
 </head>
 <body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="utf-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
-<p class="p1">&lt;title&gt;PickFlick&lt;/title&gt;</p>
-<p class="p1">&lt;link rel="manifest" href="<span class="s1">/manifest</span>.json"&gt;</p>
-<p class="p1">&lt;link rel="stylesheet" href="<span class="s1">/styles</span>.css"&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div id="root" style="min-height:100vh;display:flex;align-items:center;justify-content:center;"&gt;</p>
-<p class="p1">&lt;div style="text-align:center;"&gt;</p>
-<p class="p1">&lt;p style="color:<span class="s1">#bbb</span>;margin:0 0 8px;"&gt;Loading PickFlick…&lt;/p&gt;</p>
-<p class="p1">&lt;div aria-label="loading" style="width:40px;height:40px;border:4px solid #666;border-top-color:<span class="s1">#fff</span>;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto"&gt;&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script type="module" src="/js/app.js"&gt;&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="s1">@keyframes</span> spin { to { transform: rotate(360deg); } }</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<div class="container">
+<h1>🎬 PickFlick</h1>
+<p class="tagline">Stop scrolling. Start watching. 4 taps → 1 perfect pick.</p>
+
+<div class="progress-dots" id="dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<!-- Step 0: Mood -->
+<div class="step active" id="step0">
+  <h3>What's your mood?</h3>
+  <div class="options">
+    <div class="opt" onclick="pick(0,'chill')">😌 Chill</div>
+    <div class="opt" onclick="pick(0,'thrills')">🔥 Thrills</div>
+    <div class="opt" onclick="pick(0,'laughs')">😂 Laughs</div>
+    <div class="opt" onclick="pick(0,'feels')">💔 Feels</div>
+    <div class="opt" onclick="pick(0,'mind-bending')">🧠 Mind-bending</div>
+  </div>
+</div>
+
+<!-- Step 1: Subscriptions -->
+<div class="step" id="step1">
+  <h3>What do you subscribe to?</h3>
+  <p style="color:#888;font-size:.85rem;margin-top:4px">Pick all that apply</p>
+  <div class="options" id="sub-options">
+    <div class="opt" onclick="toggleSub(this,'Netflix')">📺 Netflix</div>
+    <div class="opt" onclick="toggleSub(this,'Disney+')">✨ Disney+</div>
+    <div class="opt" onclick="toggleSub(this,'Max')">🎬 Max</div>
+    <div class="opt" onclick="toggleSub(this,'Hulu')">💚 Hulu</div>
+    <div class="opt" onclick="toggleSub(this,'Prime Video')">📦 Prime Video</div>
+    <div class="opt" onclick="toggleSub(this,'Apple TV+')">🍎 Apple TV+</div>
+    <div class="opt" onclick="toggleSub(this,'Peacock')">🦚 Peacock</div>
+    <div class="opt" onclick="toggleSub(this,'Paramount+')">⛰️ Paramount+</div>
+    <div class="opt" onclick="toggleSub(this,'None')">🚫 None</div>
+  </div>
+  <button class="btn" onclick="confirmSubs()" id="sub-next-btn" style="opacity:.4;pointer-events:none;margin-top:8px">Next →</button>
+</div>
+
+<!-- Step 2: Time -->
+<div class="step" id="step2">
+  <h3>How much time do you have?</h3>
+  <div class="options">
+    <div class="opt" onclick="pick(2,'short')">⚡ Under 90 min</div>
+    <div class="opt" onclick="pick(2,'medium')">🍿 90–120 min</div>
+    <div class="opt" onclick="pick(2,'long')">🎬 2+ hours / series</div>
+  </div>
+</div>
+
+<!-- Step 3: Who -->
+<div class="step" id="step3">
+  <h3>Who's watching?</h3>
+  <div class="options">
+    <div class="opt" onclick="pick(3,'solo')">🧑 Solo</div>
+    <div class="opt" onclick="pick(3,'date')">💑 Date night</div>
+    <div class="opt" onclick="pick(3,'family')">👨‍👩‍👧‍👦 Family</div>
+    <div class="opt" onclick="pick(3,'friends')">🍻 Friends</div>
+  </div>
+</div>
+
+<!-- Result -->
+<div class="step" id="result"></div>
+
+<footer>PickFlick MVP — Kill the Scroll of Death</footer>
+</div>
+
+<script>
+const db=[
+{title:"The Grand Budapest Hotel",genre:"Comedy/Drama",desc:"A quirky concierge and his protégé navigate a stolen painting, a family fortune, and a changing Europe.",mood:["laughs","chill"],time:["medium"],who:["solo","date","friends"],rating:"8.1",platform:"Disney+",year:2014},
+{title:"Inception",genre:"Sci-Fi/Thriller",desc:"A thief who steals secrets through dream-sharing is given the inverse task of planting an idea.",mood:["thrills","mind-bending"],time:["long"],who:["solo","friends"],rating:"8.8",platform:"Netflix",year:2010},
+{title:"The Office (US)",genre:"Comedy/Series",desc:"A mockumentary on a group of typical office workers, where the weights of the day are measured in laughter.",mood:["laughs","chill"],time:["short","long"],who:["solo","friends","family"],rating:"9.0",platform:"Peacock",year:2005},
+{title:"Interstellar",genre:"Sci-Fi/Drama",desc:"A team of explorers travel through a wormhole in space to ensure humanity's survival.",mood:["feels","mind-bending","thrills"],time:["long"],who:["solo","date"],rating:"8.7",platform:"Paramount+",year:2014},
+{title:"Knives Out",genre:"Mystery/Comedy",desc:"A detective investigates the death of a patriarch of an eccentric, combative family.",mood:["thrills","laughs"],time:["medium"],who:["date","friends","family"],rating:"7.9",platform:"Prime Video",year:2019},
+{title:"Soul",genre:"Animation/Drama",desc:"A musician who has lost his passion for music finds it again with help from a new soul learning about herself.",mood:["feels","chill"],time:["short"],who:["solo","family","date"],rating:"8.0",platform:"Disney+",year:2020},
+{title:"Parasite",genre:"Thriller/Drama",desc:"Greed and class discrimination threaten the symbiotic relationship between the wealthy Park family and the destitute Kim clan.",mood:["thrills","mind-bending"],time:["medium"],who:["solo","friends"],rating:"8.5",platform:"Hulu",year:2019},
+{title:"Ted Lasso",genre:"Comedy/Series",desc:"An American football coach is hired to manage a British soccer team despite having no experience.",mood:["laughs","feels","chill"],time:["short","long"],who:["solo","family","date","friends"],rating:"8.8",platform:"Apple TV+",year:2020},
+{title:"Everything Everywhere All at Once",genre:"Sci-Fi/Comedy",desc:"A Chinese-American woman is swept up in a mind-bending adventure across multiple universes.",mood:["mind-bending","laughs","feels"],time:["medium"],who:["solo","date","friends"],rating:"7.8",platform:"Prime Video",year:2022},
+{title:"The Shawshank Redemption",genre:"Drama",desc:"Two imprisoned men bond over a number of years, finding solace and eventual redemption.",mood:["feels"],time:["medium"],who:["solo"],rating:"9.3",platform:"Max",year:1994},
+{title:"Stranger Things",genre:"Sci-Fi/Horror/Series",desc:"When a young boy disappears, his friends, family and police uncover a series of supernatural mysteries.",mood:["thrills"],time:["long"],who:["friends","solo"],rating:"8.7",platform:"Netflix",year:2016},
+{title:"The Menu",genre:"Thriller/Comedy",desc:"A young couple travels to a remote island to eat at an exclusive restaurant with a celebrity chef.",mood:["thrills","laughs","mind-bending"],time:["short"],who:["date","friends"],rating:"7.2",platform:"Max",year:2022},
+{title:"Coco",genre:"Animation/Family",desc:"A boy journeys to the Land of the Dead to find his musician great-great-grandfather.",mood:["feels","chill"],time:["short"],who:["family","solo","date"],rating:"8.4",platform:"Disney+",year:2017},
+{title:"John Wick",genre:"Action/Thriller",desc:"An ex-hit-man comes out of retirement to track down the gangsters that killed his dog.",mood:["thrills"],time:["short"],who:["solo","friends"],rating:"7.4",platform:"Peacock",year:2014},
+{title:"Fleabag",genre:"Comedy/Drama/Series",desc:"A dry-witted woman navigates life in London while trying to cope with a personal tragedy.",mood:["laughs","feels"],time:["short"],who:["solo","date"],rating:"8.7",platform:"Prime Video",year:2016},
+{title:"Dune",genre:"Sci-Fi/Epic",desc:"A noble family becomes embroiled in a war for control over a desert planet with a valuable resource.",mood:["thrills","mind-bending"],time:["long"],who:["solo","friends"],rating:"8.0",platform:"Max",year:2021},
+{title:"The Bear",genre:"Drama/Series",desc:"A young chef returns to Chicago to run his family's sandwich shop after a death in the family.",mood:["feels","thrills"],time:["short","long"],who:["solo","date"],rating:"8.6",platform:"Hulu",year:2022},
+{title:"My Neighbor Totoro",genre:"Animation/Family",desc:"Two young girls move to the countryside with their father and discover magical forest creatures.",mood:["chill","feels"],time:["short"],who:["family","solo"],rating:"8.1",platform:"Max",year:1988},
+{title:"Get Out",genre:"Horror/Thriller",desc:"A young African-American visits his white girlfriend's parents for the weekend, uncovering a disturbing secret.",mood:["thrills","mind-bending"],time:["short"],who:["solo","date","friends"],rating:"7.7",platform:"Netflix",year:2017},
+{title:"Schitt's Creek",genre:"Comedy/Series",desc:"A wealthy family suddenly finds themselves broke and living in a small town they once bought as a joke.",mood:["laughs","chill","feels"],time:["short","long"],who:["solo","family","date","friends"],rating:"8.5",platform:"Netflix",year:2015},
+{title:"Arrival",genre:"Sci-Fi/Drama",desc:"A linguist is recruited by the military to communicate with alien lifeforms after twelve spacecraft appear.",mood:["mind-bending","feels"],time:["medium"],who:["solo","date"],rating:"7.9",platform:"Paramount+",year:2016},
+{title:"Spider-Man: Into the Spider-Verse",genre:"Animation/Action",desc:"Teen Miles Morales becomes the Spider-Man of his reality and crosses paths with counterparts from other dimensions.",mood:["thrills","laughs"],time:["medium"],who:["family","friends","solo"],rating:"8.4",platform:"Netflix",year:2018},
+{title:"The Social Network",genre:"Drama/Biography",desc:"The story of the founding of Facebook and the resulting lawsuits.",mood:["mind-bending","thrills"],time:["medium"],who:["solo","friends"],rating:"7.8",platform:"Netflix",year:2010},
+{title:"Succession",genre:"Drama/Series",desc:"The Roy family controls one of the biggest media conglomerates. As patriarch Logan Roy ages, his children vie for power.",mood:["thrills","mind-bending"],time:["long"],who:["solo","date"],rating:"8.8",platform:"Max",year:2018},
+{title:"Spirited Away",genre:"Animation/Fantasy",desc:"A young girl wanders into a world of spirits and must find a way to free herself and her parents.",mood:["feels","chill","mind-bending"],time:["medium"],who:["solo","family"],rating:"8.6",platform:"Max",year:2001},
+{title:"Glass Onion",genre:"Mystery/Comedy",desc:"Detective Blanc investigates a tech billionaire's murder mystery party on his private island.",mood:["laughs","thrills"],time:["medium"],who:["date","friends","family"],rating:"7.1",platform:"Netflix",year:2022},
+{title:"Oppenheimer",genre:"Biography/Drama",desc:"The story of the American scientist who led the development of the atomic bomb.",mood:["mind-bending","feels","thrills"],time:["long"],who:["solo"],rating:"8.3",platform:"Peacock",year:2023},
+{title:"Abbott Elementary",genre:"Comedy/Series",desc:"A group of teachers in an underfunded public school in Philadelphia are determined to help students succeed.",mood:["laughs","chill","feels"],time:["short"],who:["solo","family","friends"],rating:"8.2",platform:"Max",year:2021},
+{title:"The Banshees of Inisherin",genre:"Drama/Comedy",desc:"Two lifelong friends on a remote Irish island find their relationship challenged when one abruptly ends their friendship.",mood:["feels","mind-bending"],time:["medium"],who:["solo","date"],rating:"7.7",platform:"Max",year:2022},
+{title:"Encanto",genre:"Animation/Family/Musical",desc:"A Colombian teenage girl struggles with being the only member of her magical family without powers.",mood:["chill","feels","laughs"],time:["short"],who:["family","solo"],rating:"7.2",platform:"Disney+",year:2021},
+{title:"Top Gun: Maverick",genre:"Action/Drama",desc:"After more than 30 years of service, Maverick is called to train a group of Top Gun graduates.",mood:["thrills","feels"],time:["medium"],who:["solo","friends","family"],rating:"8.2",platform:"Paramount+",year:2022},
+{title:"Severance",genre:"Sci-Fi/Thriller/Series",desc:"Employees agree to a surgical procedure that separates their work memories from their personal memories.",mood:["mind-bending","thrills"],time:["long"],who:["solo","date"],rating:"8.7",platform:"Apple TV+",year:2022},
+{title:"Paddington 2",genre:"Comedy/Family",desc:"Paddington, now settled with the Brown family, picks up a series of odd jobs to buy a birthday gift.",mood:["chill","laughs","feels"],time:["short"],who:["family","solo","date"],rating:"7.8",platform:"Netflix",year:2017},
+{title:"The White Lotus",genre:"Drama/Comedy/Series",desc:"Follow the exploits of various guests and employees at an exclusive tropical resort.",mood:["thrills","laughs","mind-bending"],time:["long"],who:["solo","date","friends"],rating:"7.6",platform:"Max",year:2021},
+{title:"Minari",genre:"Drama",desc:"A Korean family starts a farm in 1980s Arkansas, chasing the American Dream.",mood:["feels","chill"],time:["medium"],who:["solo","date","family"],rating:"7.5",platform:"Prime Video",year:2020},
+{title:"Baby Driver",genre:"Action/Music",desc:"A young getaway driver relies on the beat of his personal soundtrack to be the best in the game.",mood:["thrills","laughs"],time:["short"],who:["solo","friends","date"],rating:"7.6",platform:"Netflix",year:2017},
+{title:"Bluey",genre:"Animation/Family/Series",desc:"The adventures of Bluey, a lovable Blue Heeler pup who lives with her family.",mood:["chill","laughs"],time:["short"],who:["family"],rating:"9.4",platform:"Disney+",year:2018},
+{title:"The Batman",genre:"Action/Crime",desc:"Batman ventures into Gotham's underworld when a killer targets the city's elite.",mood:["thrills"],time:["long"],who:["solo","friends"],rating:"7.8",platform:"Max",year:2022},
+{title:"Past Lives",genre:"Drama/Romance",desc:"Two childhood friends reconnect decades later in New York, navigating love, fate, and identity.",mood:["feels","chill"],time:["medium"],who:["solo","date"],rating:"7.8",platform:"Paramount+",year:2023},
+{title:"Beef",genre:"Comedy/Drama/Series",desc:"Two strangers get into a road rage incident that spirals into a feud affecting every part of their lives.",mood:["thrills","laughs","feels"],time:["long"],who:["solo","date","friends"],rating:"8.0",platform:"Netflix",year:2023}
+];
+let answers={};let pickIdx=0;let matches=[];let userSubs=[];
+function toggleSub(el,name){
+  // "None" is exclusive — deselect everything else when picked, and vice versa
+  const allOpts=document.querySelectorAll('#sub-options .opt');
+  if(name==='None'){
+    allOpts.forEach(o=>{if(o!==el)o.classList.remove('selected')});
+    userSubs=['None'];
+    el.classList.add('selected');
+  }else{
+    // Deselect "None" if another platform is picked
+    allOpts.forEach(o=>{if(o.textContent.includes('None'))o.classList.remove('selected')});
+    userSubs=userSubs.filter(s=>s!=='None');
+    if(el.classList.contains('selected')){el.classList.remove('selected');userSubs=userSubs.filter(s=>s!==name)}
+    else{el.classList.add('selected');userSubs.push(name)}
+  }
+  const btn=document.getElementById('sub-next-btn');
+  if(userSubs.length){btn.style.opacity='1';btn.style.pointerEvents='auto'}
+  else{btn.style.opacity='.4';btn.style.pointerEvents='none'}
+}
+function confirmSubs(){
+  if(!userSubs.length)return;
+  answers.subs=[...userSubs];
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+  const dots=document.querySelectorAll('.dot');
+  dots[1].classList.remove('active');dots[1].classList.add('done');
+  dots[2].classList.add('active');
+}
+function pick(step,val){
+  if(step===0)answers.mood=val;
+  if(step===2)answers.time=val;
+  if(step===3){answers.who=val;showResult();return}
+  document.getElementById('step'+step).classList.remove('active');
+  document.getElementById('step'+(step+1)).classList.add('active');
+  const dots=document.querySelectorAll('.dot');
+  dots[step].classList.remove('active');dots[step].classList.add('done');
+  dots[step+1].classList.add('active');
+}
+function showResult(){
+  document.getElementById('step3').classList.remove('active');
+  const dots=document.querySelectorAll('.dot');
+  dots[3].classList.remove('active');dots[3].classList.add('done');
+  // If "None" selected, skip platform filtering — show everything
+  const skipFilter=answers.subs.includes('None');
+  const available=skipFilter?db:db.filter(m=>answers.subs.includes(m.platform));
+  matches=available.filter(m=>m.mood.includes(answers.mood)&&m.time.includes(answers.time)&&m.who.includes(answers.who));
+  if(!matches.length)matches=available.filter(m=>m.mood.includes(answers.mood)&&m.who.includes(answers.who));
+  if(!matches.length)matches=available.filter(m=>m.mood.includes(answers.mood));
+  if(!matches.length)matches=available.slice(0,3);
+  if(!matches.length){document.getElementById('result').classList.add('active');document.getElementById('result').innerHTML='<div class="result-card"><h2>No matches 😔</h2><div class="desc">We couldn\'t find a title on your platforms for that combo. Try different options!</div></div><button class="btn" onclick="restart()">↩ Start over</button>';return}
+  matches.sort(()=>Math.random()-.5);
+  pickIdx=0;
+  renderPick();
+}
+function renderPick(){
+  const m=matches[pickIdx%matches.length];
+  const searchUrl='https://www.google.com/search?q=watch+'+encodeURIComponent(m.title)+'+'+encodeURIComponent(m.platform);
+  document.getElementById('result').classList.add('active');
+  document.getElementById('result').innerHTML=`
+    <div class="result-card">
+      <h2>${m.title} (${m.year})</h2>
+      <div class="genre">${m.genre}</div>
+      <div class="desc">${m.desc}</div>
+      <div class="meta">
+        <span class="badge">⭐ ${m.rating}</span>
+        <span class="badge">📺 ${m.platform}</span>
+      </div>
+      <a class="platform-link" href="${searchUrl}" target="_blank">▶ Watch on ${m.platform}</a>
+    </div>
+    <div style="margin-top:16px">
+      <button class="btn secondary" onclick="nextPick()">🔄 Show me another</button>
+      <button class="btn" onclick="restart()">↩ Start over</button>
+    </div>
+    <p style="color:#555;font-size:.8rem;margin-top:12px">Pick ${Math.min(pickIdx+1,3)} of 3</p>`;
+}
+function nextPick(){if(pickIdx<2){pickIdx++;renderPick()}else{document.getElementById('result').innerHTML='<div class="result-card"><h2>That\'s your 3!</h2><div class="desc">Still can\'t decide? Start over with a different mood.</div></div><button class="btn" onclick="restart()">↩ Start over</button>'}}
+function restart(){answers={};pickIdx=0;matches=[];userSubs=[];document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));document.getElementById('step0').classList.add('active');document.querySelectorAll('#sub-options .opt').forEach(o=>o.classList.remove('selected'));document.getElementById('sub-next-btn').style.opacity='.4';document.getElementById('sub-next-btn').style.pointerEvents='none';const dots=document.querySelectorAll('.dot');dots.forEach(d=>{d.classList.remove('done','active')});dots[0].classList.add('active')}
+</script>
 </body>
 </html>
